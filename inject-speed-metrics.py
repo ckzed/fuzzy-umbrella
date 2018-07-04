@@ -5,7 +5,7 @@ import time
 import speedtest
 import requests
 
-DB_URI = 'http://localhost:8086/write?db=speedtest'
+DB_URI = 'http://influxdb:8086/write?db=speedtest'
 
 
 def inject_metrics(db_uri, measurement, value, timestamp):

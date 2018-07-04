@@ -1,0 +1,27 @@
+version: "3"
+services:
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086"
+    networks:
+      - speedtest_net
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:9000"
+    networks:
+      - speedtest_net
+  speedtest:
+    build: .
+    image: ckzed-speedtest:latest
+    networks:
+      - speedtest_net
+
+networks:
+  speedtest_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.168.120.0/24
