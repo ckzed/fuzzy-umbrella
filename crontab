@@ -1,0 +1,1 @@
+*/15 * * * *            /inject-speed-metrics.py >> /var/log/speed-metrics.log

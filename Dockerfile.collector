@@ -1,0 +1,7 @@
+FROM python:alpine
+
+RUN pip3 install speedtest requests
+ADD inject-speed-metrics.py /
+ADD crontab /
+RUN crontab /crontab
+CMD crond -f -l 8
