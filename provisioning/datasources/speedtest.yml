@@ -1,0 +1,15 @@
+delete_datasources:
+  - name: Graphite
+    org_id: 1
+datasources:
+  - name: speedtestdb
+    type: influxdb
+    access: proxy
+    orgId: 1
+    url: http://influxdb:8086
+    user: admin
+    password: admin
+    database: speedtest
+    version: 1
+    is_default: true
+    editable: true

@@ -2,8 +2,3 @@ FROM grafana/grafana:latest
 ADD speedtest.json /usr/share/grafana/public/dashboards/home.json
 ADD grafana.ini /etc/grafana/grafana.ini
 ADD ./provisioning /etc/grafana/provisioning
-
-RUN mkdir /app
-WORKDIR /app
-ADD entrypoint.sh ./
-RUN chmod +x /app/entrypoint.sh
