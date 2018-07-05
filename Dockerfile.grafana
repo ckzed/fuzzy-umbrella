@@ -1,2 +1,4 @@
 FROM grafana/grafana:latest
-ADD speedtest.json /usr/share/grafana/public/dashboards/default.json
+#ADD speedtest.json /usr/share/grafana/public/dashboards/default.json
+ADD speedtest.json /usr/share/grafana/public/dashboards/home.json
+ADD grafana.ini /etc/grafana/grafana.ini
