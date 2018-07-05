@@ -4,10 +4,15 @@ services:
     image: influxdb:latest
     environment:
       INFLUXDB_DB: "speedtest"
+    volume:
+      - "/store/tmp/speedtest-influx-data:/var/lib/influxdb"
   grafana:
-    image: grafana/grafana:latest
+    build: .
+    image: ckzed-grafana:latest
     ports:
       - "9000:3000"
+    volume:
+      - "/store/tmp/speedtest-grafana-data:/var/lib/grafana"
   speedtest:
     build: .
     image: ckzed-speedtest:latest
