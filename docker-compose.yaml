@@ -13,6 +13,9 @@ services:
       - "9000:3000"
     volumes:
       - "/store/tmp/speedtest-grafana-data:/var/lib/grafana"
+      - "./speedtest.yml:/etc/provisioning/datasources/speedtest.yml"
+      - "./multipanel.json:/usr/share/grafana/public/dashboards/home.json"
+      - "./grafana.ini:/etc/grafana/grafana.ini"
   speedtest:
     build: .
     image: ckzed-speedtest:latest
