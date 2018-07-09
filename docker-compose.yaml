@@ -7,7 +7,6 @@ services:
     volumes:
       - "/store/tmp/speedtest-influx-data:/var/lib/influxdb"
   grafana:
-    build: .
     image: grafana/grafana:latest
     ports:
       - "9000:3000"
